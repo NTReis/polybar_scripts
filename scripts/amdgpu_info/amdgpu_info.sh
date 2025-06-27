@@ -39,6 +39,10 @@ format_gb() {
   fi
 }
 
+ramps=(▁ ▂ ▃ ▄ ▅ ▆ ▇ █)
+
+index=$((GPU_UTIL * 8 / 100))
+if [ $index -gt 7 ]; then index=7; fi
 
 VRAM_USED_GB=$(echo "scale=1; $VRAM_USED / 1024" | bc)
 VRAM_USED_GB=$(format_gb "$VRAM_USED_GB")
@@ -46,5 +50,6 @@ VRAM_USED_GB=$(format_gb "$VRAM_USED_GB")
 VRAM_TOTAL_GB=$(echo "scale=1; $VRAM_TOTAL / 1024" | bc)
 VRAM_TOTAL_GB=$(format_gb "$VRAM_TOTAL_GB")
 
+
 # Output JSON with VRAM usage and GPU usage percentage
-echo "GPU:$GPU_UTIL% VRAM:$VRAM_USED_GB/$VRAM_TOTAL_GB GB"
+echo "$GPU_UTIL% ${ramps[$index]} VRAM: $VRAM_USED_GB/$VRAM_TOTAL_GB GB"
