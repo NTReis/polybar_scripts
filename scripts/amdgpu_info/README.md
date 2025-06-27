@@ -1,6 +1,6 @@
 This needs to have amdgpu_top installed.
 
-#Module
+## Module
 
 [module/amdgpu]
 
