@@ -3,7 +3,6 @@ This needs to have amdgpu_top installed.
 ## Module
 
 [module/amdgpu]
-\n
 type = custom/script
 exec = ~/amdgpu_info.sh
 interval = 0.5
