@@ -6,4 +6,4 @@ This needs to have amdgpu_top installed.
 type = custom/script
 exec = ~/amdgpu_info.sh
 interval = 0.5
-label = %output%
+label = GPU %output%
